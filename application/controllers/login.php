@@ -15,3 +15,5 @@ class Login extends CI_Controller {
 		$this->load->view('panel_control');
 	}
 }
+
+?>
