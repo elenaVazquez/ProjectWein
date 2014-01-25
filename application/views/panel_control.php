@@ -33,21 +33,20 @@
 		</div>
 	</div>
 <div class="container">
-
 	<div class="row row-offcanvas row-offcanvas-right">
 		<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
           <div class="add"><button type="button" class="btn btn-lg btn-success">ADD</button></div>
           <div class="list-group">
           	<a href="#" class="list-group-item">Link</a>
           </div>
-        </div>
+    </div>
 		<div class="col-xs-12 col-sm-9">
 			<div class="jumbotron row">
 				<div class=".col-xs-12 .col-md-8" data-id="<%= id %>">
-            	<div class="thumbnail">
-              		<img src="/res/img/classic.jpg">
-              		<div class="caption">
-                <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><h3><%= name %></h3></div>
+          <div class="thumbnail">
+          		<img src="/res/img/classic.jpg">
+          		<div class="caption">
+                <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><h3>name:<%= name %></h3></span></div>
                 <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><%= description %></span></div>
                 <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><%= description %></span></div>
                 <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><%= description %></span></div>
@@ -59,20 +58,17 @@
                 <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><%= description %></span></div>
                 <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><%= description %></span></div>
                 <div style="float:right;">
-                <p>
-                	<button id="stop_<%= id %>" class="btn btn-lg btn-warning"><span class="glyphicon glyphicon-edit">Edit</span></button> 
+                  <p>
+                  	<button id="stop_<%= id %>" class="btn btn-lg btn-warning"><span class="glyphicon glyphicon-edit">Edit</span></button> 
                     <button id="play_<%= id %>" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-minus">Delete</span></button>                     
-                </p>
-            </div>
+                  </p>
+                </div>
               </div>
-            </div>
-            </div>
-
-
+          </div>
+        </div>
 			</div>
 		</div>
-
-	</div>
+  </div>
 </div>
 
 

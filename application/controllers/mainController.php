@@ -1,9 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class WineController extends CI_Controller {
+class MainController extends CI_Controller {
 
 
+	public function logout(){
 
+	}
+
+	
 
 
 }

@@ -2,36 +2,129 @@
 
 class Wine_model extends CI_Model {
 
+	public $id = array();
+    public $name = array();
+    public $proof;
+    public $price;
+    public $year; 
+    public $composition = array();
+    public $origin_place = array();
+    public $soil = array();
+    public $climate = array();
+    public $type = array();
+    public $do = array();
+
 
 	function __construct() {
 	        
 	    parent::__construct();
 	}
 
-	function getAll_Wines(){
+	function add_Wine($name, $proof, $price, $year, $composition, $soil, $climate, $type, $do){
+		
+		$insert_data = array(
+            'name' => $name,
+            'proof' => $proof,
+            'price' => $price,
+            'year' => $year,
+            'composition' => $composition,
+            'soil' => $soil,
+            'climate' => $climate,
+            'type' => $type,
+            'do' => $do
+    	);
+                
+        $this->db->insert('Wine', $insert_data);
+	}
 
+	function delete_Wine($id){
+
+		$sqlQuery = "
+        DELETE 
+        FROM Wine
+        WHERE id = ?
+        ";
+                
+        $query = $this->db->query($sqlQuery, array($id));
 
 	}
 
-	function get_Wine(){
+	function edit_Wine($id, $name, $proof, $price, $year, $composition, $soil, $climate, $type, $do){
+
+		$update_data = array(
+                'name' => $name,
+                'proof' => $proof,
+                'price' => $price,
+                'year' => $year,
+                'composition' => $composition,
+                'soil' => $soil,
+                'climate' => $climate,
+                'type' => $type,
+                'do' => $do
+        );
+                
+        $where = "id = $id";
+        
+        $this->db->update('Wine', $update_data, $where);
 
 	}
 
-	function add_Wine(){
-
+	function get_Wine($id){
+		$sqlQuery = "
+        SELECT *
+        FROM Wine
+        WHERE id = ?";
+        
+        $query = $this->db->query($sqlQuery, array($id));
+        
+        $data = array();
+        
+        if($query->num_rows() > 0)
+        {
+                $row = $query->row();      
+                $data['id'] = $row->id;
+                $data['name'] = $row->name;
+                $data['proof'] = $row->proof;
+                $data['price'] = $row->price;
+                $data['year'] = $row->year;
+                $data['composition'] = $row->composition;
+                $data['soil'] = $row->soil;
+                $data['climate'] = $row->climate;
+                $data['type'] = $row->type;
+                $data['do'] = $row->do;
+        }
+        
+        return $data;
 	}
 
-	function delete_Wine(){
+	function getAll_Wines($id_wineCellar){
+		$sqlQuery = "
+        SELECT *
+        FROM Wine
+        WHERE id_wineCellar = ?";
+        
+        $query = $this->db->query($sqlQuery, array($id));
+        
+        $data = array();
+        
+        if($query->num_rows() > 0)
+        {
+                $row = $query->row();      
+                $data['id'] = $row->id;
+                $data['name'] = $row->name;
+                $data['proof'] = $row->proof;
+                $data['price'] = $row->price;
+                $data['year'] = $row->year;
+                $data['composition'] = $row->composition;
+                $data['soil'] = $row->soil;
+                $data['climate'] = $row->climate;
+                $data['type'] = $row->type;
+                $data['do'] = $row->do;
+        }
+        
+        return $data;
 
 	}
-
-	function edit_Wine(){
-
-	}
-
-	
-
-
 
 }
 
