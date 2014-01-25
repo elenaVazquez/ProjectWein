@@ -9,7 +9,7 @@ class WineCellar_model extends CI_Model {
     public $email = array(); 
     public $place = array();
 
-//echo date("jS F, Y", strtotime("11.12.10")); 
+    //echo date("jS F, Y", strtotime("11.12.10")); 
 
 	function __construct()
     {
@@ -73,18 +73,17 @@ class WineCellar_model extends CI_Model {
                 
         if($query->num_rows() > 0) {
 
-                $row = $query->row();            
-                $data['id'] = $row->id;
-                $data['name'] = $row->name;
-                $data['telefon'] = $row->telefon;
-                $data['description'] = $row->description;
-                $data['email'] = $row->email;
-                $data['place'] = $row->place;                                        
+            $row = $query->row();            
+            $data['id'] = $row->id;
+            $data['name'] = $row->name;
+            $data['telefon'] = $row->telefon;
+            $data['description'] = $row->description;
+            $data['email'] = $row->email;
+            $data['place'] = $row->place;  
+
         }
         
-        
         return $data;
-
 
     }
 

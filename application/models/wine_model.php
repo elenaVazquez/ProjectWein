@@ -102,27 +102,29 @@ class Wine_model extends CI_Model {
         SELECT *
         FROM Wine
         WHERE id_wineCellar = ?";
-        
-        $query = $this->db->query($sqlQuery, array($id));
-        
+      
+     	$query = $this->db->query($sql_query);
         $data = array();
-        
-        if($query->num_rows() > 0)
-        {
-                $row = $query->row();      
-                $data['id'] = $row->id;
-                $data['name'] = $row->name;
-                $data['proof'] = $row->proof;
-                $data['price'] = $row->price;
-                $data['year'] = $row->year;
-                $data['composition'] = $row->composition;
-                $data['soil'] = $row->soil;
-                $data['climate'] = $row->climate;
-                $data['type'] = $row->type;
-                $data['do'] = $row->do;
+        if($query->num_rows() > 0) {
+            $row = $query->result();
+            $i = 0;
+            foreach($row as $item) {
+
+                $data[$i]['id'] = $item->id;
+                $data[$i]['name'] = $item->name;
+                $data[$i]['proof'] = $item->proof;
+                $data[$i]['price'] = $item->price;
+                $data[$i]['year']=$item->year;
+                $data[$i]['composition'] = $item->composition;
+                $data[$i]['soil'] = $item->soil;
+                $data[$i]['climate'] = $item->climate;
+                $data[$i]['type'] = $item->type;
+                $data[$i]['do']=$item->do;
+                $i++;
+            }                        
         }
         
-        return $data;
+        return $data;      
 
 	}
 

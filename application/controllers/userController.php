@@ -2,8 +2,8 @@
 
 class UserController extends CI_Controller {
 
-	public function addUser($username, $nameWineCellar){
-		//aqui cridem a user model i a wineCEllar
+	public function addUser(){
+		//aqui cridem a user model
 	}
 
 
