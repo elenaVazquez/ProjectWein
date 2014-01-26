@@ -1,4 +1,5 @@
 <?php
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class User_model extends CI_Model {
 
@@ -9,11 +10,14 @@ class User_model extends CI_Model {
 	function __construct() {
 	        
 	    parent::__construct();
+	    //$this->load->database();
 	}
 
 
 	function add_User($username, $nameCellar){
+
 		
+		//INSERT INTO usuarios VALUES('usuario',MD5('contraseña'));
 		$insert_data = array(
             'username' => $username
     	);
@@ -57,6 +61,26 @@ class User_model extends CI_Model {
         return $data;
 
 	}
+
+	function exists($username, $password){
+		$sqlQuery = "
+        SELECT password
+        FROM UserWeb
+        WHERE username = ?";
+        //$this->db = $this->load->database('files', TRUE);
+
+        //$query = $this->db->query($sqlQuery, array($password));
+        
+        //$row = $query->row();      
+        //$pass = $row->password;
+
+        //if($pass == $password) return true;
+        return false;
+
+
+	}
+
+
 
 
 }
