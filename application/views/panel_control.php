@@ -25,7 +25,7 @@ $this->lang->load('base', 'english');
 			    <span class="icon-bar"></span>
 			    <span class="icon-bar"></span>
 			  </button>
-			  <a class="navbar-brand" href="#">WEIN</a>
+			  <div class="navbar-brand" href="#">WEIN</div>
 			</div>
 			<div class="collapse navbar-collapse">
 			  <ul class="nav navbar-nav">
@@ -52,9 +52,9 @@ $this->lang->load('base', 'english');
     <div class="col-xs-12 col-sm-9">
       <div class="jumbotron row">
         <div class=".col-xs-12 .col-md-8" data-id="<%= id %>">
-          <div class="thumbnail">
-              <img src="<?php echo base_url();?>res/img/classic.jpg">
-              <div class="caption">
+          <div  class="thumbnail">
+              <img class="img_panel" src="<?php echo base_url();?>res/img/classic.jpg">
+              <div class="caption info_panel">
                 <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><h3>name:<%= name %></h3></span></div>
                 <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><%= description %></span></div>
                 <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><%= description %></span></div>
@@ -80,15 +80,59 @@ $this->lang->load('base', 'english');
   </div>
 </div>
 
+<!--
+<div id="wines_panel_edit" class="container" style="display: none;">
+    <div class="row row-offcanvas row-offcanvas-right">
+    <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+          <div class="add"><button type="button" class="btn btn-lg btn-success">ADD</button></div>
+          <div id="winesId" class="list-group">
+            <a href="#" class="list-group-item">Link</a>
+          </div>
+    </div>
+    <div class="col-xs-12 col-sm-9">
+      <div class="jumbotron row">
+        <div class=".col-xs-12 .col-md-8" data-id="<%= id %>">
+          <div  class="thumbnail">
+              <img class="img_panel" src="<?php echo base_url();?>res/img/classic.jpg">
+              <div class="caption info_panel">
+                <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;">
+                  <span><h3>name:</h3>
+                    <div class="input-group"><input type="text" class="form-control" placeholder="NameCellar">
+                      </div></span>
+                </div>
+                <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><%= description %></span></div>
+                <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><%= description %></span></div>
+                <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><%= description %></span></div>
+                <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><%= description %></span></div>
+                <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><%= description %></span></div>
+                <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><%= description %></span></div>
+                <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><%= description %></span></div>
+                <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><%= description %></span></div>
+                <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><%= description %></span></div>
+                <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><%= description %></span></div>
+                <div>
+                  <p>
+                    <button id="edit_<%= id %>" class="btn btn-lg btn-warning"><span class="glyphicon glyphicon-edit">Edit</span></button> 
+                    <button id="delete_<%= id %>" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-minus">Delete</span></button>                     
+                  </p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+-->
 
 <div id="wineCellar_panel" class="container">
     <div class="col-xs-12 col-sm-12">
       <div class="jumbotron row">
         <div class=".col-xs-12 .col-md-8" data-id="<%= id %>">
           <div class="thumbnail">
-              <img src="<?php echo base_url();?>res/img/bodega.jpg">
-              <div class="caption">
+              <img class="img_panel img_cellar" src="<?php echo base_url();?>res/img/bodega.jpg">
+              <div class="caption info_panel">
                 <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><h3>name:<%= name %></h3></span></div>
                 <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><%= description %></span></div>
                 <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><%= description %></span></div>
@@ -118,7 +162,7 @@ $this->lang->load('base', 'english');
       <div class="jumbotron row">
         <div class=".col-xs-12 .col-md-8" data-id="<%= id %>">
           <div class="thumbnail">
-              <div class="caption">
+              <div class="caption info_panel">
                 <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><h3>name:<%= name %></h3></span></div>
                 <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><%= description %></span></div>
                 <div style="overflow:hidden;margin-top:10px;margin-bottom:10px;"><span><%= description %></span></div>

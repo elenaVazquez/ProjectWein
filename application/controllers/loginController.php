@@ -35,6 +35,8 @@ class LoginController extends CI_Controller {
             }
             else{      
                 $exists=$this->user_model->exists($_POST['usernamelogin'],$_POST['passwordlogin']);    
+                ///aquí he d'anar al model i agafar les dades que necessito, enviar un boolea si ja ha insertat el celler 
+                //sino l'ha insertat els links de wines i events han d'estar desactivats
                 if($exists){    
                 
                     $this->load->view('panel_control');
