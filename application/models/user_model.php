@@ -10,7 +10,7 @@ class User_model extends CI_Model {
 	function __construct() {
 	        
 	    parent::__construct();
-	    //$this->load->database();
+	    $this->load->database();
 	}
 
 
@@ -63,19 +63,21 @@ class User_model extends CI_Model {
 	}
 
 	function exists($username, $password){
-		$sqlQuery = "
-        SELECT password
-        FROM UserWeb
-        WHERE username = ?";
-        //$this->db = $this->load->database('files', TRUE);
-
-        //$query = $this->db->query($sqlQuery, array($password));
+		
+		/*$sqlQuery = "
+        SELECT *
+        FROM `UserWeb`";
+        $query = $this->db->query($sqlQuery);*/
         
-        //$row = $query->row();      
+        //$query = $this->db->where("username","test");
+		$query = $this->db->get("UserWeb");
+        
+        var_dump($query); 
+        //$row = $query->row();     
         //$pass = $row->password;
 
         //if($pass == $password) return true;
-        return false;
+        return true;
 
 
 	}

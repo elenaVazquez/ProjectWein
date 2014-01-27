@@ -21,8 +21,8 @@ class LoginController extends CI_Controller {
 		$this->load->library('form_validation');
 		
 		if(!isset($_POST['usernamelogin'])){       
-            
-            $this->load->view('panel_control');  
+            var_dump("esta buit");
+            $this->load->view('login');  
 
         }else{                                
 
@@ -30,10 +30,11 @@ class LoginController extends CI_Controller {
             $this->form_validation->set_rules('passwordlogin','Password','required');
             
             if(($this->form_validation->run()==FALSE)){  
-
-                $this->load->view('panel_control');                            
+				var_dump("entro al from no valid");
+                $this->load->view('login');                            
             }
             else{      
+            	
                 $exists=$this->user_model->exists($_POST['usernamelogin'],$_POST['passwordlogin']);    
                 ///aquí he d'anar al model i agafar les dades que necessito, enviar un boolea si ja ha insertat el celler 
                 //sino l'ha insertat els links de wines i events han d'estar desactivats
@@ -42,7 +43,7 @@ class LoginController extends CI_Controller {
                     $this->load->view('panel_control');
                 
                 } else{    
-                    
+                    var_dump("dades no correctes");
                     $data['error']="E-mail o password incorrecta, por favor vuelva a intentar";
                     $this->load->view('login',$data);   
                 
